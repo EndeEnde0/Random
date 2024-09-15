@@ -40,7 +40,7 @@ def sortList(data, numberOfClass, bigNumber, smallNumber):  # 각 계급 간격 
     #print(f"계급 갯수: {numberOfClass}")
     #print(f"계급 간격: {classGap}")
     #print(f"도수 갯수: {sum(list)}")
-    print(f"리스트 보기: {list}")
+    #print(f"리스트 보기: {list}\n", end='\n')
     return list, classGap
 
 def drawTable(data, numberOfClass):  # 도수분포표 작성해주는 함수
@@ -48,7 +48,7 @@ def drawTable(data, numberOfClass):  # 도수분포표 작성해주는 함수
     smallestNumber = findSmallestNumber(data)
     gapOfClass = findGapOfClass(biggestNumber, smallestNumber, numberOfClass) #계급 간격
     numberBetweenEachGap, classGap = sortList(data, numberOfClass, biggestNumber, smallestNumber)  #각 계급의 도수의 갯수가 저장
-    #print(numberBetweenEachGap)  #도수저장
+    print(f"리스트 보기 : {numberBetweenEachGap}\n",end="\n")  #도수저장
 
     print("{0:^6} | {1:^8} | {2} | {3} | {4} | {5} | {6}".format("계 급","계급간격","도수","상대도수","누적도수","누적상대도수",'계급값'))  #출력
     temp = 0  #누적도수
@@ -113,7 +113,6 @@ else:
     
 print('------------------------<데이터 원본>-----------------------\n')
 print(data)
-print(selectNumberOfClass)
 print('\n------------------------<도수분포표>-----------------------\n')
 drawTable(data,selectNumberOfClass)
 print('\n------------------------<상대도수 히스토그램>-----------------------\n')
